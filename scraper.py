@@ -16,7 +16,10 @@ def scrape_divs(url):
         membertitle = ""
         memberbiog = ""
         h2s = row.cssselect("h2") #grab all <h2> tags within our <div>
-        #put the text from the first <h4 tags into variable membername
+        #If there are any, grab the first and put it in the membername variable
+        if h2s:
+            membername = h2s[0].text
+        #repeat process for <p class="lead"> and <p>
         leads = row.cssselect("p.lead")
         #If there are any, grab the first and put it in the membername variable
         if leads:
