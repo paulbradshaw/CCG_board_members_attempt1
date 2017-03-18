@@ -6,8 +6,8 @@ def scrape_divs(url):
     html = scraperwiki.scrape(url)
     print html
     root = lxml.html.fromstring(html)
-    #line below selects all <div class="block size3of4" - note that because there is a space in the value of the div class, we need to put it in inverted commas as a string
-    rows = root.cssselect("div.'block size3of4'")  
+    #line below selects all <div class="reveal-modal medium"> - note that because there is a space in the value of the div class, we need to use a space to indicate that
+    rows = root.cssselect("div.reveal-modal.medium") 
     for row in rows:
         # Set up our data record - we'll need it later
         print row
