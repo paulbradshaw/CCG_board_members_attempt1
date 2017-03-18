@@ -35,4 +35,7 @@ ccglist = ['www.hounslowccg.nhs.uk/',  'www.centrallondonccg.nhs.uk/', 'www.hamm
 #'www.ealingccg.nhs.uk/' has similar page but at different URL: http://www.hammersmithfulhamccg.nhs.uk/about-us/our-governing-body.aspx
 for ccg in ccglist:
     fullurl = 'http://'+ccg+'about-us/our-governing-body.aspx'
+    print 'scraping ', fullurl
+    scrape_divs(fullurl)
+
 
