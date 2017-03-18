@@ -31,7 +31,8 @@ def scrape_divs(url):
         scraperwiki.sqlite.save(["Name"], record)
         
 #list of URLs with similar CMS compiled with this advanced search on Google: inurl:about-us/board.aspx CCG
-ccglist = ['www.brentccg.nhs.uk/', 'www.ealingccg.nhs.uk/', 'www.hounslowccg.nhs.uk/', 'www.westlondonccg.nhs.uk/', 'www.centrallondonccg.nhs.uk/', 'www.harrowccg.nhs.uk/', 'www.hammersmithfulhamccg.nhs.uk/']
-#loop through the list and for each one, convert into the full URL and run the scrape_divs function created earlier
+ccglist = ['www.hounslowccg.nhs.uk/',  'www.centrallondonccg.nhs.uk/', 'www.hammersmithfulhamccg.nhs.uk/']
+#'www.ealingccg.nhs.uk/' has similar page but at different URL: http://www.hammersmithfulhamccg.nhs.uk/about-us/our-governing-body.aspx
 for ccg in ccglist:
-    scrape_divs('http://'+ccg+'about-us/board.aspx')
+    fullurl = 'http://'+ccg+'about-us/our-governing-body.aspx'
+
