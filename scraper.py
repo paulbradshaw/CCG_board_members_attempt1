@@ -35,7 +35,7 @@ def scrape_divs(url):
         # Finally, save the record to the datastore - 'Name' is our unique key
         scraperwiki.sqlite.save(["Name"], record)
         
-#list of URLs with similar CMS compiled with this advanced search on Google: inurl:about-us/board.aspx CCG
+#list of URLs with similar CMS compiled with this advanced search on Google: site:nhs.uk inurl:about-us/our-governing-body.aspx
 ccglist = ['www.hounslowccg.nhs.uk/',  'www.centrallondonccg.nhs.uk/', 'www.hammersmithfulhamccg.nhs.uk/']
 #'www.ealingccg.nhs.uk/' has similar page but at different URL: http://www.hammersmithfulhamccg.nhs.uk/about-us/our-governing-body.aspx
 for ccg in ccglist:
