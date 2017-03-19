@@ -1,8 +1,10 @@
+#import our libraries
 import scraperwiki
 import urlparse
 import lxml.html
-# scrape_divs function: gets passed an individual page to scrape
-def scrape_divs(url):
+
+# create a new function, which gets passed a variable we're going to call 'url'
+def scrape_ccg(url):
     html = scraperwiki.scrape(url)
     print html
     root = lxml.html.fromstring(html)
@@ -41,6 +43,6 @@ ccglist = ['www.hounslowccg.nhs.uk/',  'www.centrallondonccg.nhs.uk/', 'www.hamm
 for ccg in ccglist:
     fullurl = 'http://'+ccg+'about-us/our-governing-body.aspx'
     print 'scraping ', fullurl
-    scrape_divs(fullurl)
+    scrape_ccg(fullurl)
 
 
