@@ -14,18 +14,19 @@ def scrape_ccg(url):
         # Set up our data record - we'll need it later
         print row
         record = {}
-        membername = ""
+        '''membername = ""
         membertitle = ""
-        memberbiog = ""
+        memberbiog = ""'''
         h2s = row.cssselect("h2") #grab all <h2> tags within our <div>
         #If there are any, grab the first and put it in the membername variable
-        if h2s:
-            membername = h2s[0].text
-        #repeat process for <p class="lead"> and <p>
+        #if h2s:
+        membername = h2s[0].text
+        #repeat process for <p class="lead"> 
         leads = row.cssselect("p.lead")
         #If there are any, grab the first and put it in the membername variable
-        if leads:
-            membertitle = leads[0].text
+        #if leads:
+        membertitle = leads[0].text
+        #repeat process for <p>
         ps = row.cssselect("p")
         #this line puts the contents of the last <p tag by using [-1]
         memberbiog = ps[-1].text_content()
