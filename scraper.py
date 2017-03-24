@@ -1,6 +1,5 @@
 #import our libraries
 import scraperwiki
-import urlparse
 import lxml.html
 
 # create a new function, which gets passed a variable we're going to call 'url'
