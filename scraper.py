@@ -11,20 +11,13 @@ def scrape_ccg(url):
     #line below selects all <div class="reveal-modal medium"> - note that because there is a space in the value of the div class, we need to use a space to indicate that
     rows = root.cssselect("div.reveal-modal.medium") 
     for row in rows:
-        # Set up our data record - we'll need it later
         print row
+        # Set up our data record - we'll need it later
         record = {}
-        '''membername = ""
-        membertitle = ""
-        memberbiog = ""'''
         h2s = row.cssselect("h2") #grab all <h2> tags within our <div>
-        #If there are any, grab the first and put it in the membername variable
-        #if h2s:
         membername = h2s[0].text
         #repeat process for <p class="lead"> 
         leads = row.cssselect("p.lead")
-        #If there are any, grab the first and put it in the membername variable
-        #if leads:
         membertitle = leads[0].text
         #repeat process for <p>
         ps = row.cssselect("p")
